@@ -2710,6 +2710,7 @@ Transform:
   - {fileID: 4934352222025360091}
   - {fileID: 4928509608989451013}
   - {fileID: 4928479576287675571}
+  - {fileID: 1982247286597514726}
   m_Father: {fileID: 4934370873346169845}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3504,7 +3505,6 @@ Transform:
   - {fileID: 4934493096989746085}
   - {fileID: 4928162005465729011}
   - {fileID: 4928540463055927237}
-  - {fileID: 1982247286597514726}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3687,7 +3687,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 4934765542187877551}
+    m_TransformParent: {fileID: 4928489166710031455}
     m_Modifications:
     - target: {fileID: 147836, guid: 7ceb3a1f1f168f142bde4734b0dfbea0, type: 3}
       propertyPath: m_Name
@@ -3695,7 +3695,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 430702, guid: 7ceb3a1f1f168f142bde4734b0dfbea0, type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 430702, guid: 7ceb3a1f1f168f142bde4734b0dfbea0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3703,11 +3703,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 430702, guid: 7ceb3a1f1f168f142bde4734b0dfbea0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.563
+      value: -0.0061124125
       objectReference: {fileID: 0}
     - target: {fileID: 430702, guid: 7ceb3a1f1f168f142bde4734b0dfbea0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 0.004839566
       objectReference: {fileID: 0}
     - target: {fileID: 430702, guid: 7ceb3a1f1f168f142bde4734b0dfbea0, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3715,7 +3715,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 430702, guid: 7ceb3a1f1f168f142bde4734b0dfbea0, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: -0.00000008940696
       objectReference: {fileID: 0}
     - target: {fileID: 430702, guid: 7ceb3a1f1f168f142bde4734b0dfbea0, type: 3}
       propertyPath: m_LocalRotation.y
