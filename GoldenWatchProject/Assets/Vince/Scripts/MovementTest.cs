@@ -9,6 +9,7 @@ public class MovementTest : MonoBehaviour
     [SerializeField] GameObject bullet;
     [SerializeField] Transform target;
     [SerializeField] float smoothRotationSpeed = 5f;
+    [SerializeField] Transform playerPos;
     void Start()
     {
         
@@ -36,7 +37,7 @@ public class MovementTest : MonoBehaviour
 
         Vector3 movement = new Vector3(xMovement, 0, yMovement);
         movement.Normalize();
-        transform.Translate(movement * Time.deltaTime * speed);
+        playerPos.transform.Translate(movement * Time.deltaTime * speed);
 
         float currentRotationY = anchor.transform.localEulerAngles.y;
         if (currentRotationY > 180f)
