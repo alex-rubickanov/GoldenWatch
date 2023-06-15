@@ -26,6 +26,8 @@ public class MovementTest : MonoBehaviour
         float x = Input.GetAxis("RightHorizontal");
         float y = Input.GetAxis("RightVertical");
 
+        Debug.Log(x+ " " + y);
+
         float xMovement = Input.GetAxis("Horizontal");
         float yMovement = Input.GetAxis("Vertical");
 
@@ -48,12 +50,15 @@ public class MovementTest : MonoBehaviour
 
         if (currentRotationY > 90f || currentRotationY < -90f)
         {
-            Vector3 directionToTarget = target.position - transform.position;
-            directionToTarget.y = 0; // Set Y axis to 0
-            Quaternion targetRotation = Quaternion.LookRotation(directionToTarget);
-            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, smoothRotationSpeed * Time.deltaTime);
+            if(y != 0 && x != 0) {
+                Vector3 directionToTarget = target.position - transform.position;
+                directionToTarget.y = 0; // Set Y axis to 0
+                Quaternion targetRotation = Quaternion.LookRotation(directionToTarget);
+                transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, smoothRotationSpeed * Time.deltaTime);
+            }
+            
         }
-        print(currentRotationY);
+        //print(currentRotationY);
     }
 
     void Shoot()
