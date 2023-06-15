@@ -27,8 +27,6 @@ public class MovementTest : MonoBehaviour
         float x = Input.GetAxis("RightHorizontal");
         float y = Input.GetAxis("RightVertical");
 
-        Debug.Log(x+ " " + y);
-
         float xMovement = Input.GetAxis("Horizontal");
         float yMovement = Input.GetAxis("Vertical");
 

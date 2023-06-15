@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 231c89ffca976334f8444d7b4913aa02
+guid: 182c859145adc8b468e4a12a5db87653
 ModelImporter:
   serializedVersion: 20300
   internalIDToNameTable: []
@@ -16,13 +16,13 @@ ModelImporter:
     optimizeGameObjects: 0
     motionNodeName: 
     rigImportErrors: 
-    rigImportWarnings: "Copied Avatar Rig Configuration mis-match. Bone length in
-      copied configuration does not match position in animation file:\n\t'UpperLeg_L'
-      : position error = 10982.589844 mm\n\t'LowerLeg_L' : position error = 39682.531250
-      mm\n\t'Ankle_L' : position error = 37477.726563 mm\n\t'Ball_L' : position error
-      = 11213.813477 mm\n"
+    rigImportWarnings: 
     animationImportErrors: 
-    animationImportWarnings: 
+    animationImportWarnings: "\nClip 'mixamo.com' has import animation warnings that
+      might lower retargeting quality:\nNote: Activate translation DOF on avatar
+      to improve retargeting quality.\n\t'Ball_R' is inbetween humanoid transforms
+      and has rotation animation that will be discarded.\n\t'Ball_L' is inbetween
+      humanoid transforms and has rotation animation that will be discarded.\n"
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
@@ -36,11 +36,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Rifle Aiming Idle
+      name: Run Forward
       takeName: mixamo.com
       internalID: -203655887218126122
       firstFrame: 0
-      lastFrame: 169
+      lastFrame: 30
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
