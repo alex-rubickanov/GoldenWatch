@@ -48,7 +48,9 @@ public class MovementTest : MonoBehaviour
 
         if (currentRotationY > 90f || currentRotationY < -90f)
         {
-            Quaternion targetRotation = Quaternion.LookRotation(target.position - transform.position);
+            Vector3 directionToTarget = target.position - transform.position;
+            directionToTarget.y = 0; // Set Y axis to 0
+            Quaternion targetRotation = Quaternion.LookRotation(directionToTarget);
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, smoothRotationSpeed * Time.deltaTime);
         }
         print(currentRotationY);
