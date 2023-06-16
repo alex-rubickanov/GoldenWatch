@@ -9,19 +9,27 @@ public class PlayerAnimationController : MonoBehaviour
 
     private const string VELOCITY_X = "VelX";
     private const string VELOCITY_Z = "VelZ";
+    private const string HAS_WEAPON = "HasWeapon";
 
     private Vector3 moveDirection = Vector3.zero;
 
+    private PlayerWeaponController playerWeaponController;
 
     private void Start()
     {
         animator = GetComponent<Animator>();
         movementScript= GetComponentInParent<Movement>();
+        playerWeaponController= GetComponentInParent<PlayerWeaponController>();
     }
 
     private void Update()
     {
         Animating(movementScript.GetLeftJoystickInput().x, movementScript.GetLeftJoystickInput().z);
+        if(playerWeaponController.HasWeapon()) {
+            animator.SetBool(HAS_WEAPON, true);
+        } else {
+            animator.SetBool(HAS_WEAPON, false);
+        }
     }
 
     void Animating(float h, float v)
