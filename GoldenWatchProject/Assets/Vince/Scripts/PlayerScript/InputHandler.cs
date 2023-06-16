@@ -25,12 +25,10 @@ public class InputHandler : MonoBehaviour
         if(playerNum == PlayerRole.Player1)
         {
             playerRole = "P1_";
-            print(playerNum);
         }
         else if(playerNum == PlayerRole.Player2)
         {
             playerRole = "P2_";
-            print(playerNum);
         }
     }
 
