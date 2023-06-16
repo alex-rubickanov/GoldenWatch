@@ -25,6 +25,8 @@ public class ControllerDetect : MonoBehaviour
         if (numOfPlayersReady > 1)
         {
             startText.SetActive(true);
+
+            
             // Load scene or start the game
         }
     }
@@ -36,8 +38,7 @@ public class ControllerDetect : MonoBehaviour
             if (Input.GetKey(KeyCode.Joystick1Button0) && !mainMenu.activeSelf)
             {
                 SetNumberOfPlayerReady(0);
-                playerReady[0].SetActive(true);
-                joinBtns[0].SetActive(false);
+                ReadyPlayer(0);
             }
         }
 
@@ -46,8 +47,7 @@ public class ControllerDetect : MonoBehaviour
             if (Input.GetKey(KeyCode.Joystick2Button0) && !mainMenu.activeSelf)
             {
                 SetNumberOfPlayerReady(1);
-                playerReady[1].SetActive(true);
-                joinBtns[1].SetActive(false);
+                ReadyPlayer(1);
             }
         }
     }
@@ -58,6 +58,14 @@ public class ControllerDetect : MonoBehaviour
         {
             numOfPlayersReady++;
         }
+    }
+
+    IEnumerator ReadyPlayer(int playerNum)
+    {
+        yield return new WaitForSeconds(1);
+
+        playerReady[playerNum].SetActive(true);
+        joinBtns[playerNum].SetActive(false);
     }
 
     void RemoveEmptyControllerNames()
