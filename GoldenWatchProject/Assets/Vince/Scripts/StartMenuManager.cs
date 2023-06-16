@@ -7,7 +7,7 @@ public class StartMenuManager : MonoBehaviour
 {
     [SerializeField] Button startButton;
     [SerializeField] Button exitButton;
-
+    [SerializeField] GameObject mainMenu;
     [SerializeField] GameObject JoinPanel;
     void Start()
     {
@@ -18,10 +18,11 @@ public class StartMenuManager : MonoBehaviour
     void StartGame()
     {
         JoinPanel.SetActive(true);
+        mainMenu.SetActive(false);
     }
 
     void Exit()
     {
-
+        Application.Quit();
     }
 }
