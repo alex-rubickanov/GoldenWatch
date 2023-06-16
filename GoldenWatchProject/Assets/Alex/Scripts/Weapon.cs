@@ -6,6 +6,8 @@ using UnityEngine;
 public class Weapon : MonoBehaviour
 {
     [Header("---------PROPERTIES----------")]
+    private int maxAmmo;
+    [SerializeField] protected float damage;
     [SerializeField] protected int currentAmmo;
     [SerializeField] protected float shootingSpeed;
 
@@ -26,8 +28,10 @@ public class Weapon : MonoBehaviour
 
     private void Awake()
     {
-        inputHandler = GameObject.FindAnyObjectByType<InputHandler>();
+        inputHandler = gameObject.GetComponentInParent<InputHandler>();
         audioManager = GameObject.FindAnyObjectByType<AudioManagerScript>();
+
+        currentAmmo = maxAmmo;
     }
 
     private void Update()
@@ -46,6 +50,7 @@ public class Weapon : MonoBehaviour
         {
             timer = 0f; 
             GameObject bullet = Instantiate(bulletPrefab, bulletSpawner.position, bulletSpawner.rotation);
+            bullet.GetComponent<BulletDamage>().SetDamage(damage);
             bullet.GetComponent<Rigidbody>().AddForce(bulletSpawner.forward * bulletSpeed, ForceMode.Impulse);
             currentAmmo -= 1;
             ParticleSystem gunShotFX =  Instantiate(gunShotParticle, bulletSpawner.position, bulletSpawner.rotation);
@@ -61,5 +66,10 @@ public class Weapon : MonoBehaviour
         if (currentAmmo <= 0) {
             return false;
         } else return true;
+    }
+
+    public void SetShootingSpeed(float newSpeed)
+    {
+        shootingSpeed = newSpeed;
     }
 }

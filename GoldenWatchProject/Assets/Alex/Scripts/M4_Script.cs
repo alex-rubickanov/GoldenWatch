@@ -29,6 +29,7 @@ public class M4_Script : Weapon
 
         for(int i = 0; i < 3; i++) {
             GameObject bullet = Instantiate(bulletPrefab, bulletSpawner.position, bulletSpawner.rotation);
+            bullet.GetComponent<BulletDamage>().SetDamage(damage);
             bullet.GetComponent<Rigidbody>().AddForce(bulletSpawner.forward * bulletSpeed, ForceMode.Impulse);
             
             ParticleSystem gunShotFX = Instantiate(gunShotParticle, bulletSpawner.position, bulletSpawner.rotation);
