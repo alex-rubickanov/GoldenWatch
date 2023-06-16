@@ -9448,6 +9448,7 @@ MonoBehaviour:
   anchor: {fileID: 6149782414812896837}
   targetSight: {fileID: 6149782413529259954}
   playerBody: {fileID: 2868459242010301817}
+  rot: 0
 --- !u!114 &1482698390
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9461,6 +9462,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 5
+  playerBody: {fileID: 2868459242010301817}
 --- !u!114 &1482698391
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13987,7 +13989,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2865950761402986223}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0.12031005, z: 0, w: 0.99273634}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -13996,7 +13998,7 @@ Transform:
   - {fileID: 6149782413879642811}
   m_Father: {fileID: 1482698388}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 13.82, z: 0}
 --- !u!4 &2868483732511189971
 Transform:
   m_ObjectHideFlags: 0

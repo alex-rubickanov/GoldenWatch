@@ -8,6 +8,7 @@ public class Movement : MonoBehaviour
 {
     [SerializeField] float movementSpeed = 10f;
     InputHandler inputHandler;
+    [SerializeField] Transform playerBody;
     Rigidbody rb;
     Vector3 movement;
 
