@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.ShaderGraph;
 using UnityEngine;
 
 public class Movement : MonoBehaviour
@@ -8,6 +9,8 @@ public class Movement : MonoBehaviour
     [SerializeField] float movementSpeed = 10f;
     InputHandler inputHandler;
     Rigidbody rb;
+    Vector3 movement;
+
     private void Start()
     {
         inputHandler = GetComponent<InputHandler>();
@@ -26,10 +29,17 @@ public class Movement : MonoBehaviour
 
         float xMovement = Input.GetAxis(inputHandler.GetPlayerRole + "LS_Horizontal");
         float yMovement = Input.GetAxis(inputHandler.GetPlayerRole + "LS_Vertical");
+        Debug.Log(xMovement + " " + yMovement);
 
-        Vector3 movement = new Vector3(xMovement, 0, yMovement);
-        movement.Normalize();
-
-        rb.velocity = movement * movementSpeed;
+        movement = new Vector3(xMovement, 0, yMovement) * movementSpeed;
+        
+        rb.velocity = movement;
     }
+
+
+    public Vector3 GetLeftJoystickInput()
+    {   
+        return movement;
+    }
+
 }
