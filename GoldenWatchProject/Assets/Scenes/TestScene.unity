@@ -4045,6 +4045,36 @@ MonoBehaviour:
   target: {fileID: 838321478}
   smoothRotationSpeed: 2
   playerPos: {fileID: 0}
+--- !u!1 &1291012239
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1291012240}
+  m_Layer: 0
+  m_Name: BulletSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1291012240
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1291012239}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.117, z: 0.715}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6149782414038320298}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1482698387
 GameObject:
   m_ObjectHideFlags: 0
@@ -4057,7 +4087,6 @@ GameObject:
   - component: {fileID: 1482698391}
   - component: {fileID: 1482698390}
   - component: {fileID: 1482698389}
-  - component: {fileID: 1482698392}
   - component: {fileID: 1482698393}
   - component: {fileID: 1482698394}
   m_Layer: 0
@@ -4124,21 +4153,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerNum: 0
---- !u!114 &1482698392
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1482698387}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a57111f21e70624a943d17c1861e900, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bullet: {fileID: 1860184351635337177, guid: 43d1af031c32a4d47a9b38cb1eec248b, type: 3}
-  bulletSpawnPoint: {fileID: 471877600}
-  bulletSpeed: 100
 --- !u!54 &1482698393
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6769,6 +6783,7 @@ Transform:
   - {fileID: 6149782414038333846}
   - {fileID: 6149782414038374866}
   - {fileID: 6149782414038334074}
+  - {fileID: 1291012240}
   m_Father: {fileID: 2868820947779086541}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: -90}
@@ -6880,6 +6895,7 @@ GameObject:
   - component: {fileID: 6149782414035466314}
   - component: {fileID: 6149782414036528060}
   - component: {fileID: 6178167485110294700}
+  - component: {fileID: 6149782414038554799}
   m_Layer: 0
   m_Name: SM_Wep_RifleBandit_01
   m_TagString: Untagged
@@ -6887,6 +6903,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &6149782414038554799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6149782414038554798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3842dc4a31643645a4d05d6726c4f30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentAmmo: 30
+  damage: 10
+  shootingSpeed: 0.2
+  bulletPrefab: {fileID: 116712, guid: 05f834a503ef3ec438d11bfe95dba628, type: 3}
+  bulletSpawner: {fileID: 1291012240}
 --- !u!1 &6149782414562055381
 GameObject:
   m_ObjectHideFlags: 0

@@ -29,7 +29,6 @@ public class Movement : MonoBehaviour
 
         float xMovement = Input.GetAxis(inputHandler.GetPlayerRole + "LS_Horizontal");
         float yMovement = Input.GetAxis(inputHandler.GetPlayerRole + "LS_Vertical");
-        Debug.Log(xMovement + " " + yMovement);
 
         movement = new Vector3(xMovement, 0, yMovement) * movementSpeed;
         
