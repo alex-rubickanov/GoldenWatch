@@ -10,6 +10,7 @@ public class Rotation : MonoBehaviour
     [SerializeField] Transform anchor;
     [SerializeField] Transform targetSight;
     [SerializeField] Transform playerBody;
+    public float rot;
     InputHandler inputHandler;
 
     private void Start()
@@ -20,6 +21,7 @@ public class Rotation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+         rot = playerBody.transform.localEulerAngles.y;
         Rotate();
     }
 
