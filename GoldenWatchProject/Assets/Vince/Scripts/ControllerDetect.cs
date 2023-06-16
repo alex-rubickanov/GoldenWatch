@@ -24,8 +24,7 @@ public class ControllerDetect : MonoBehaviour
 
     private void StartGame()
     {
-        if(numOfPlayersReady > 1)
-        {
+        if (numOfPlayersReady > 1) {
             startText.SetActive(true);
             //Load scene
         }
@@ -33,22 +32,26 @@ public class ControllerDetect : MonoBehaviour
 
     private void DetectPlayerGamePads()
     {
-        if (controllerNames[1] != null)
-        {
-            if (Input.GetKeyDown(KeyCode.JoystickButton0))
-            {
+        if (controllerNames[0] != null) {
+            if (Input.GetButtonDown("P1_Submit")) {
+                SetNumberOfPlayerReady(0);
                 playerReady[0].SetActive(true);
                 joinBtns[0].SetActive(false);
-            }
-        }
 
-        if (controllerNames[2] != null)
-        {
-            if (Input.GetKeyDown(KeyCode.JoystickButton0))
-            {
+            }
+        } else if (controllerNames[1] != null) {
+            if (Input.GetButtonDown("P2_Submit")) {
+                SetNumberOfPlayerReady(1);
                 playerReady[1].SetActive(true);
                 joinBtns[1].SetActive(false);
             }
+        }
+    }
+
+    void SetNumberOfPlayerReady(int playerNum)
+    {
+        if (!playerReady[playerNum].activeSelf) {
+            numOfPlayersReady++;
         }
     }
 }

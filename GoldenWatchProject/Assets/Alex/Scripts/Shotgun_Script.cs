@@ -17,6 +17,7 @@ public class Shotgun_Script : Weapon
             timer = 0f;
             for(int i = 0; i < bulletSpawners.Length; i++) {
                 GameObject bullet = Instantiate(bulletPrefab, bulletSpawners[i].transform.position, bulletSpawners[i].transform.rotation);
+                bullet.GetComponent<BulletDamage>().SetDamage(damage);
                 bullet.GetComponent<Rigidbody>().AddForce(bulletSpawners[i].transform.forward * bulletSpeed, ForceMode.Impulse);
             }
             currentAmmo -= 1;

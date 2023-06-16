@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class BulletDamage : MonoBehaviour
 {
-    [SerializeField] private float damage;
-
-    private void Awake()
-    {
-
-    }
+    private float damage;
 
     public float GetDamage()
     {
         return damage;
+    }
+
+    public void SetDamage(float damage)
+    {
+        this.damage = damage;
     }
 }

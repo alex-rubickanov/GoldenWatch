@@ -357,6 +357,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40a531535a022d0458bd5ed8955bc5ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 100
   currentAmmo: 2
   shootingSpeed: 1
   bulletPrefab: {fileID: 116712, guid: b9800446675d9324c8582a760c0d0660, type: 3}
