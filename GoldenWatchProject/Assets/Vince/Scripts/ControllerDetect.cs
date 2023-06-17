@@ -18,6 +18,8 @@ public class ControllerDetect : MonoBehaviour
         RemoveEmptyControllerNames();
         DetectPlayerGamePads();
         StartGame();
+
+
     }
 
     private void StartGame()
@@ -65,7 +67,6 @@ public class ControllerDetect : MonoBehaviour
             numOfPlayersReady++;
         }
     }
-
 
     void RemoveEmptyControllerNames()
     {
