@@ -2053,6 +2053,7 @@ GameObject:
   - component: {fileID: 6996972521462482648}
   - component: {fileID: 6996972521462482655}
   - component: {fileID: 5938896564068902571}
+  - component: {fileID: 7760077441066865257}
   m_Layer: 0
   m_Name: Player 1
   m_TagString: Player
@@ -2179,6 +2180,22 @@ MonoBehaviour:
   bloodVFX: {fileID: 2732227470374874161, guid: e0c0a3846d78fa342a58f7e8105d31c1, type: 3}
   spawnPoint: {fileID: 0}
   health: 200
+--- !u!114 &7760077441066865257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6996972521462482654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8b05983e41701541a84c5cd4c51ff02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uiTimer: {fileID: 0}
+  playerRole: 0
+  goldWatch: 0
+  goldWatchObj: {fileID: 1901428069077016201, guid: 50a00d3ee6382c64ebf7f38981e2d0f9, type: 3}
 --- !u!1 &6996972521485971512
 GameObject:
   m_ObjectHideFlags: 0

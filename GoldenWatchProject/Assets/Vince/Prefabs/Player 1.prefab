@@ -1889,6 +1889,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 5
+  playerBody: {fileID: 0}
 --- !u!114 &2511602919402480148
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1905,6 +1906,7 @@ MonoBehaviour:
   anchor: {fileID: 8611844602945360580}
   targetSight: {fileID: 8611844601678566195}
   playerBody: {fileID: 366429806021335544}
+  rot: 0
 --- !u!114 &2511602919402480153
 MonoBehaviour:
   m_ObjectHideFlags: 0
