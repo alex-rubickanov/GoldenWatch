@@ -47,10 +47,9 @@ public class ControllerDetect : MonoBehaviour
 
     private void DetectPlayerGamePads()
     {
-        if (gc.controllerNames.Count > 0 && numOfPlayersReady < 1 && !string.IsNullOrEmpty(gc.controllerNames[0]))
+        if (/*gc.controllerNames.Count > 0 && numOfPlayersReady < 1 && !string.IsNullOrEmpty(gc.controllerNames[0])*/ true)
         {
-            if (Input.GetKeyDown(KeyCode.Joystick1Button0))
-            {
+            if (Input.GetKeyDown(KeyCode.Joystick1Button0)) {
                 SetNumberOfPlayerReady(0);
                 playerReady[0].SetActive(true);
                 joinBtns[0].SetActive(false);
