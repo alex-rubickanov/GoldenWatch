@@ -4,15 +4,12 @@ using UnityEngine;
 
 public class MovementSpeedX2 : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    private float duration = 5f;
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        if(gameObject.GetComponentInParent<Movement>() != null) {
+            Destroy(this, duration);
+        }
     }
 }
