@@ -4,20 +4,15 @@ using UnityEngine;
 
 public class MusicRadioScript : MonoBehaviour
 {
-    private AudioSource musicSource;
-    [SerializeField] AudioClip[] songs;
-
-    private void Start()
+    // Start is called before the first frame update
+    void Start()
     {
-        musicSource= GetComponent<AudioSource>();
+        
     }
 
-    private void PlayMusic()
+    // Update is called once per frame
+    void Update()
     {
-        if (!musicSource.isPlaying) {
-            musicSource.PlayOneShot(songs[Random.Range(0, songs.Length)], 0.3f);
-        }
+        
     }
-
-
 }
