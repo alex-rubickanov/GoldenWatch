@@ -8,10 +8,15 @@ public class AudioManagerScript : MonoBehaviour
     [SerializeField] AudioSource musicSource;
     [SerializeField] AudioClip[] songs;
 
-
-    private void Start()
+    private static AudioManagerScript instance;
+    private void Awake() //singleton
     {
-        DontDestroyOnLoad(this);
+        if (instance == null) {
+            instance = this;
+        } else {
+            Destroy(gameObject);
+        }
+        DontDestroyOnLoad(gameObject);
     }
     private void Update()
     {
