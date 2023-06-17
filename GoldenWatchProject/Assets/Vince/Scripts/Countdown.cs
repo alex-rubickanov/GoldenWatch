@@ -27,6 +27,7 @@ public class Countdown : MonoBehaviour
 
         while (cdNum < countDown.Length)
         {
+            
             yield return new WaitForSeconds(timeInterval);
             anim.SetTrigger("Activate");
             cdObject.SetActive(true);
