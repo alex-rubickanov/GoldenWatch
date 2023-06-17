@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Bullet
   - PickUp
+  - GoldWatch
+  - Player1Timer
+  - Player2Timer
   layers:
   - Default
   - TransparentFX
