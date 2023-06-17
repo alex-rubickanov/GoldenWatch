@@ -23,7 +23,6 @@ public class CountDownStarter : MonoBehaviour
         if (countdown == null)
         {
             EnableAllObjects(true);
-            Destroy(gameObject);
         }
     }
 
