@@ -17,7 +17,7 @@ public class WatchHandler : MonoBehaviour
         Player1,
         Player2
     }
-    private void OnEnable()
+    private void Awake()
     {
         playerStatus = GetComponent<PlayerStatus>();
 

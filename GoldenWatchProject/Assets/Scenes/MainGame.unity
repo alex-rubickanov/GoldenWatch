@@ -15675,6 +15675,7 @@ GameObject:
   m_Component:
   - component: {fileID: 983539168}
   - component: {fileID: 983539169}
+  - component: {fileID: 983539170}
   m_Layer: 0
   m_Name: GameOverManager
   m_TagString: Untagged
@@ -15708,10 +15709,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 863c6761c0399ce498d2e775f4a322ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player1Timer: {fileID: 0}
-  player2Timer: {fileID: 0}
-  playerWinUI: []
-  gameOverUi: {fileID: 0}
+  player1Timer: {fileID: 1950778306}
+  player2Timer: {fileID: 1860315444}
+  playerWinUI:
+  - {fileID: 21300000, guid: a3f06121b75da364fa7b37bc7bfa1a46, type: 3}
+  - {fileID: 21300000, guid: 028f2b37aa0706a4f9aa790febfdebaa, type: 3}
+  gameOverUi: {fileID: 1291419909}
+  exitBtn: {fileID: 325184395}
+--- !u!114 &983539170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 983539167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8abd9195138c7b64cbdc892b93bfa222, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerUis:
+  - {fileID: 368633370}
+  - {fileID: 1875544351}
+  playerMangers:
+  - {fileID: 1655526839}
+  - {fileID: 1863887583}
+  countdown: {fileID: 1521464749}
 --- !u!1001 &984059044
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23511,7 +23534,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1521464750
 RectTransform:
   m_ObjectHideFlags: 0
@@ -25391,11 +25414,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerPrefab: {fileID: 6996972521462482654, guid: 7f6ed0e3d4425194f849b39459b6afd4, type: 3}
-  startSpawnPoint: {fileID: 757391115}
-  randomSpawnPoints:
-  - {fileID: 305077407}
-  - {fileID: 1587053134}
-  - {fileID: 148306817}
+  startSpawnPoint: {fileID: 305077407}
+  randomSpawnPoints: []
 --- !u!4 &1655526841
 Transform:
   m_ObjectHideFlags: 0
@@ -28350,11 +28370,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerPrefab: {fileID: 5965722211890745407, guid: 01024bed092b713488ad2ae01f818257, type: 3}
-  startSpawnPoint: {fileID: 1806529606}
-  randomSpawnPoints:
-  - {fileID: 1289479249}
-  - {fileID: 1339119265}
-  - {fileID: 570039291}
+  startSpawnPoint: {fileID: 1289479249}
+  randomSpawnPoints: []
 --- !u!4 &1863887585
 Transform:
   m_ObjectHideFlags: 0
