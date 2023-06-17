@@ -11671,36 +11671,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 476350, guid: c413258f59cccc14d83ab0a327fcbc1e, type: 3}
   m_PrefabInstance: {fileID: 755551248}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &757391114
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 757391115}
-  m_Layer: 0
-  m_Name: Player1_StartSpawnPoint
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &757391115
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 757391114}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -24.93, y: 1.759, z: -15.57}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &759993663
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15539,7 +15509,7 @@ Transform:
   - {fileID: 1587053134}
   - {fileID: 148306817}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &980856882
 PrefabInstance:
@@ -15676,6 +15646,7 @@ GameObject:
   - component: {fileID: 983539168}
   - component: {fileID: 983539169}
   - component: {fileID: 983539170}
+  - component: {fileID: 983539171}
   m_Layer: 0
   m_Name: GameOverManager
   m_TagString: Untagged
@@ -15695,7 +15666,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &983539169
 MonoBehaviour:
@@ -15735,6 +15706,19 @@ MonoBehaviour:
   - {fileID: 1655526839}
   - {fileID: 1863887583}
   countdown: {fileID: 1521464749}
+--- !u!114 &983539171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 983539167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41359625ffe1f404db1676e4fbd2a5ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pauseMenu: {fileID: 90760720}
 --- !u!1001 &984059044
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22065,7 +22049,7 @@ Transform:
   - {fileID: 1339119265}
   - {fileID: 570039291}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1389913688
 GameObject:
@@ -24303,7 +24287,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1563211112}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 983539171}
+        m_TargetAssemblyTypeName: PauseMenuHandler, Assembly-CSharp
+        m_MethodName: PauseMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1563211112
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25415,7 +25411,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerPrefab: {fileID: 6996972521462482654, guid: 7f6ed0e3d4425194f849b39459b6afd4, type: 3}
   startSpawnPoint: {fileID: 305077407}
-  randomSpawnPoints: []
+  randomSpawnPoints:
+  - {fileID: 305077407}
+  - {fileID: 1587053134}
+  - {fileID: 148306817}
 --- !u!4 &1655526841
 Transform:
   m_ObjectHideFlags: 0
@@ -25428,7 +25427,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1659259577
 PrefabInstance:
@@ -27712,36 +27711,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 484322, guid: 8b22f8198cf2807408bbeee686aeca40, type: 3}
   m_PrefabInstance: {fileID: 1800422083}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1806529605
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1806529606}
-  m_Layer: 0
-  m_Name: Player2_StartSpawnPoint
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1806529606
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1806529605}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.19, y: 1.759, z: -15.57}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1823618930
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28371,7 +28340,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerPrefab: {fileID: 5965722211890745407, guid: 01024bed092b713488ad2ae01f818257, type: 3}
   startSpawnPoint: {fileID: 1289479249}
-  randomSpawnPoints: []
+  randomSpawnPoints:
+  - {fileID: 1289479249}
+  - {fileID: 1339119265}
+  - {fileID: 570039291}
 --- !u!4 &1863887585
 Transform:
   m_ObjectHideFlags: 0
@@ -28384,7 +28356,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1864208126
 PrefabInstance:
@@ -31846,7 +31818,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2057790292}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 983539171}
+        m_TargetAssemblyTypeName: PauseMenuHandler, Assembly-CSharp
+        m_MethodName: ExitButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2057790292
 MonoBehaviour:
   m_ObjectHideFlags: 0
