@@ -36,6 +36,8 @@ public class PlayerStatus : MonoBehaviour
     {
         if(health <= 0) {
             ragdoll.EnableRagdoll();
+            gameObject.GetComponent<Movement>().enabled = false;
+            gameObject.GetComponent<Rotation>().enabled = false;
         }
     }
 

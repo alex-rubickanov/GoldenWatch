@@ -6,10 +6,11 @@ using UnityEngine;
 public class Weapon : MonoBehaviour
 {
     [Header("---------PROPERTIES----------")]
-    private int maxAmmo;
-    [SerializeField] protected float damage;
+    [SerializeField] private int maxAmmo;
     [SerializeField] protected int currentAmmo;
+    [SerializeField] protected float damage;
     [SerializeField] protected float shootingSpeed;
+    protected float shootingSpeedX2;
 
     [Header("---------BULLET----------")]
     [SerializeField] protected GameObject bulletPrefab;
@@ -32,6 +33,7 @@ public class Weapon : MonoBehaviour
         audioManager = GameObject.FindAnyObjectByType<AudioManagerScript>();
 
         currentAmmo = maxAmmo;
+        shootingSpeedX2 = shootingSpeed / 2;
     }
 
     private void Update()
@@ -40,25 +42,40 @@ public class Weapon : MonoBehaviour
 
         if (Input.GetAxis($"{inputHandler.GetPlayerRole}Fire") > 0)
         {
-            print(inputHandler.GetPlayerRole);
             Shoot();
         }
+
+        
     }
     public virtual void Shoot()
     {
-        if(timer >= shootingSpeed && currentAmmo > 0)
-        {
-            timer = 0f; 
-            GameObject bullet = Instantiate(bulletPrefab, bulletSpawner.position, bulletSpawner.rotation);
-            bullet.GetComponent<BulletDamage>().SetDamage(damage);
-            bullet.GetComponent<Rigidbody>().AddForce(bulletSpawner.forward * bulletSpeed, ForceMode.Impulse);
-            currentAmmo -= 1;
-            ParticleSystem gunShotFX =  Instantiate(gunShotParticle, bulletSpawner.position, bulletSpawner.rotation);
-            var main = gunShotFX.main;
-            main.simulationSpeed = gunShotPlayBackSpeed;
-            audioManager.PlayGunSound(this, volume);
-            
+        if(gameObject.GetComponentInParent<ShootingSpeedX2>() != null) {
+            if (timer >= shootingSpeedX2 && currentAmmo > 0) {
+                timer = 0f;
+                GameObject bullet = Instantiate(bulletPrefab, bulletSpawner.position, bulletSpawner.rotation);
+                bullet.GetComponent<BulletDamage>().SetDamage(damage);
+                bullet.GetComponent<Rigidbody>().AddForce(bulletSpawner.forward * bulletSpeed, ForceMode.Impulse);
+                currentAmmo -= 1;
+                ParticleSystem gunShotFX = Instantiate(gunShotParticle, bulletSpawner.position, bulletSpawner.rotation);
+                var main = gunShotFX.main;
+                main.simulationSpeed = gunShotPlayBackSpeed;
+                audioManager.PlayGunSound(this, volume);
+            }
+        } else {
+            if (timer >= shootingSpeed && currentAmmo > 0) {
+                timer = 0f;
+                GameObject bullet = Instantiate(bulletPrefab, bulletSpawner.position, bulletSpawner.rotation);
+                bullet.GetComponent<BulletDamage>().SetDamage(damage);
+                bullet.GetComponent<Rigidbody>().AddForce(bulletSpawner.forward * bulletSpeed, ForceMode.Impulse);
+                currentAmmo -= 1;
+                ParticleSystem gunShotFX = Instantiate(gunShotParticle, bulletSpawner.position, bulletSpawner.rotation);
+                var main = gunShotFX.main;
+                main.simulationSpeed = gunShotPlayBackSpeed;
+                audioManager.PlayGunSound(this, volume);
+
+            }
         }
+        
     }
 
     public bool HasAmmo()
@@ -71,5 +88,10 @@ public class Weapon : MonoBehaviour
     public void SetShootingSpeed(float newSpeed)
     {
         shootingSpeed = newSpeed;
+    }
+
+    public void RefreshAmmo()
+    {
+        currentAmmo = maxAmmo;
     }
 }
