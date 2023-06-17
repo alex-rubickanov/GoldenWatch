@@ -313,6 +313,7 @@ GameObject:
   - component: {fileID: 2417103813971172556}
   - component: {fileID: 2417103813967847468}
   - component: {fileID: 2417103813968917466}
+  - component: {fileID: 2279478717990580221}
   m_Layer: 0
   m_Name: SM_Wep_RifleBandit_01
   m_TagString: Untagged
@@ -327,7 +328,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2417103813970936008}
-  m_LocalRotation: {x: -0.054680258, y: 0.3587775, z: 0.32500103, w: 0.87330586}
+  m_LocalRotation: {x: -0.15939823, y: 0.048766393, z: 0.2884622, w: 0.9428699}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children:
@@ -336,7 +337,7 @@ Transform:
   - {fileID: 2417103813971173916}
   m_Father: {fileID: 990599931309751653}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -19.191, y: 38.747, z: 34.022}
+  m_LocalEulerAnglesHint: {x: -19.191, y: 0, z: 34.022}
 --- !u!33 &2417103813967847468
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -386,3 +387,15 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &2279478717990580221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2417103813970936008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da2e50b9515235e4f9a34af256fe51c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
