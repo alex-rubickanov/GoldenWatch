@@ -5,6 +5,9 @@ using UnityEngine;
 public class AudioManagerScript : MonoBehaviour
 {
     AudioSource audioSource;
+    AudioSource musicSource;
+    [SerializeField] AudioClip[] songs;
+
 
     private void Start()
     {
@@ -14,4 +17,11 @@ public class AudioManagerScript : MonoBehaviour
     {
         audioSource.PlayOneShot(weapon.gunShotSound, volume);
     }
+
+    private void PlayMusic()
+    {
+        audioSource.PlayOneShot(songs[Random.Range(0, songs.Length)]);
+        audioSource.
+    }
+
 }

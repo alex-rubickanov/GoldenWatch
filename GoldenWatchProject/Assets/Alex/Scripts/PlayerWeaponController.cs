@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerWeaponController : MonoBehaviour
 {
     [SerializeField] private Weapon currentWeapon;
+    private Weapon oldWeapon;
     GameObject currentWeaponObject;
     [SerializeField] private GameObject weaponSlot;
 
@@ -24,6 +25,7 @@ public class PlayerWeaponController : MonoBehaviour
             }
             currentWeaponObject = Instantiate(weaponObject, weaponSlot.transform);
             currentWeapon = currentWeaponObject.GetComponent<Weapon>();
+            oldWeapon = currentWeapon;
             
         }
         
@@ -38,5 +40,15 @@ public class PlayerWeaponController : MonoBehaviour
         if (!currentWeapon.HasAmmo()) {
             currentWeapon = null;
         }
+    }
+
+    public void RefreshOldWeapon()
+    {
+        currentWeapon = oldWeapon;
+    }
+
+    public Weapon GetCurrentWeapon()
+    {
+        return currentWeapon;
     }
 }

@@ -70,7 +70,7 @@ public class Weapon : MonoBehaviour
                 currentAmmo -= 1;
                 ParticleSystem gunShotFX = Instantiate(gunShotParticle, bulletSpawner.position, bulletSpawner.rotation);
                 var main = gunShotFX.main;
-                main.simulationSpeed = gunShotPlayBackSpeed;
+                main.simulationSpeed = gunShotPlayBackSpeed;    
                 audioManager.PlayGunSound(this, volume);
 
             }

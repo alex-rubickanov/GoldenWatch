@@ -7,20 +7,18 @@ public class M4_Script : Weapon
     [Header("----------BURST PROPERTIES----------")]
     [SerializeField] private float burstSpeed;
     
-
-    private void Update()
-    {
-        timer += Time.deltaTime;
-
-        if (Input.GetAxis($"{inputHandler.GetPlayerRole}Fire") > 0) {
-            Shoot();
-        }
-    }
     public override void Shoot()
     {
-        if (timer >= shootingSpeed && currentAmmo > 0) {
-            StartCoroutine(BurstFire());
+        if (gameObject.GetComponentInParent<ShootingSpeedX2>() != null) {
+            if (timer >= shootingSpeedX2 && currentAmmo > 0) {
+                StartCoroutine(BurstFire());
+            }
+        } else {
+            if (timer >= shootingSpeed && currentAmmo > 0) {
+                StartCoroutine(BurstFire());
+            }
         }
+        
     }
     
     private IEnumerator BurstFire()
