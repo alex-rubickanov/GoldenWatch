@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ControllerDetect : MonoBehaviour
 {
@@ -9,8 +10,7 @@ public class ControllerDetect : MonoBehaviour
     [SerializeField] GameObject[] playerReady;
     [SerializeField] GameObject[] joinBtns;
     [SerializeField] GameObject startText;
-    [SerializeField] GameObject mainMenu;
-    int numOfPlayersReady;
+    public int numOfPlayersReady;
 
     void Update()
     {
@@ -26,28 +26,34 @@ public class ControllerDetect : MonoBehaviour
         {
             startText.SetActive(true);
 
-            
+            if (Input.GetKeyDown(KeyCode.Joystick1Button7) || Input.GetKeyDown(KeyCode.Joystick2Button7))
+            {
+                SceneManager.LoadScene("MainGame");
+            }
             // Load scene or start the game
+
         }
     }
 
     private void DetectPlayerGamePads()
     {
-        if (controllerNames.Count > 0 && !string.IsNullOrEmpty(controllerNames[0]))
+        if (controllerNames.Count > 0 && numOfPlayersReady < 1 && !string.IsNullOrEmpty(controllerNames[0]))
         {
-            if (Input.GetKey(KeyCode.Joystick1Button0) && !mainMenu.activeSelf)
+            if (Input.GetKeyDown(KeyCode.Joystick1Button0))
             {
                 SetNumberOfPlayerReady(0);
-                ReadyPlayer(0);
+                playerReady[0].SetActive(true);
+                joinBtns[0].SetActive(false);
             }
         }
 
-        if (controllerNames.Count > 1 && !string.IsNullOrEmpty(controllerNames[1]))
+        if (controllerNames.Count > 1 && numOfPlayersReady < 2 && !string.IsNullOrEmpty(controllerNames[1]))
         {
-            if (Input.GetKey(KeyCode.Joystick2Button0) && !mainMenu.activeSelf)
+            if (Input.GetKeyDown(KeyCode.Joystick2Button0))
             {
                 SetNumberOfPlayerReady(1);
-                ReadyPlayer(1);
+                playerReady[1].SetActive(true);
+                joinBtns[1].SetActive(false);
             }
         }
     }
@@ -60,13 +66,6 @@ public class ControllerDetect : MonoBehaviour
         }
     }
 
-    IEnumerator ReadyPlayer(int playerNum)
-    {
-        yield return new WaitForSeconds(1);
-
-        playerReady[playerNum].SetActive(true);
-        joinBtns[playerNum].SetActive(false);
-    }
 
     void RemoveEmptyControllerNames()
     {

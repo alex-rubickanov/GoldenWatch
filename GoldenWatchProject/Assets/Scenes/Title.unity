@@ -370,7 +370,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 411874957}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f0150912ddd1c7a489cfae6d63aadd87, type: 3}
   m_Name: 
@@ -383,7 +383,7 @@ MonoBehaviour:
   - {fileID: 846567100}
   - {fileID: 627667794}
   startText: {fileID: 99672264}
-  mainMenu: {fileID: 1978999241}
+  numOfPlayersReady: 0
 --- !u!1 &443736708
 GameObject:
   m_ObjectHideFlags: 0
@@ -1266,6 +1266,7 @@ MonoBehaviour:
   exitButton: {fileID: 484459972}
   mainMenu: {fileID: 1978999241}
   JoinPanel: {fileID: 42947843}
+  cd: {fileID: 411874959}
 --- !u!4 &1513122165
 Transform:
   m_ObjectHideFlags: 0
