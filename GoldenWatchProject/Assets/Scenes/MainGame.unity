@@ -15706,6 +15706,7 @@ MonoBehaviour:
   - {fileID: 1655526839}
   - {fileID: 1863887583}
   countdown: {fileID: 1521464749}
+  audioManager: {fileID: 0}
 --- !u!114 &983539171
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23559,7 +23560,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 8c061fd5bdc69f0488f900d234279659, type: 3}
   - {fileID: 21300000, guid: f022a9177a8631b4d9fdd2fde7b5c889, type: 3}
   timeInterval: 0.3
-  activeDuration: 0.7
+  activeDuration: 0.6
   cdNum: 0
 --- !u!95 &1521464752
 Animator:

@@ -44,6 +44,6 @@ public class PauseMenuHandler : MonoBehaviour
 
     public void ExitButton()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene("Title");
     }
 }
