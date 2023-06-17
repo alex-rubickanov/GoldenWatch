@@ -342,6 +342,7 @@ GameObject:
   m_Component:
   - component: {fileID: 411874958}
   - component: {fileID: 411874959}
+  - component: {fileID: 411874960}
   m_Layer: 0
   m_Name: ControllerDetector
   m_TagString: Untagged
@@ -375,7 +376,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0150912ddd1c7a489cfae6d63aadd87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controllerNames: []
   playerReady:
   - {fileID: 878568547}
   - {fileID: 1000444767}
@@ -384,6 +384,20 @@ MonoBehaviour:
   - {fileID: 627667794}
   startText: {fileID: 99672264}
   numOfPlayersReady: 0
+  gc: {fileID: 411874960}
+--- !u!114 &411874960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 411874957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 628c76272519f4d489923379b0358a7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controllerNames: []
 --- !u!1 &443736708
 GameObject:
   m_ObjectHideFlags: 0

@@ -6,12 +6,13 @@ using UnityEngine.SceneManagement;
 
 public class ControllerDetect : MonoBehaviour
 {
-    [SerializeField] List<string> controllerNames;
+    //[SerializeField] List<string> controllerNames;
     [SerializeField] GameObject[] playerReady;
     [SerializeField] GameObject[] joinBtns;
     [SerializeField] GameObject startText;
     AudioManagerScript audioManager;
     public int numOfPlayersReady;
+    [SerializeField] GetControllers gc;
 
     private void OnEnable()
     {
@@ -20,7 +21,7 @@ public class ControllerDetect : MonoBehaviour
 
     void Update()
     {
-        controllerNames = new List<string>(Input.GetJoystickNames());
+        //controllerNames = new List<string>(Input.GetJoystickNames());
         RemoveEmptyControllerNames();
         DetectPlayerGamePads();
         StartGame();
@@ -46,7 +47,7 @@ public class ControllerDetect : MonoBehaviour
 
     private void DetectPlayerGamePads()
     {
-        if (controllerNames.Count > 0 && numOfPlayersReady < 1 && !string.IsNullOrEmpty(controllerNames[0]))
+        if (gc.controllerNames.Count > 0 && numOfPlayersReady < 1 && !string.IsNullOrEmpty(gc.controllerNames[0]))
         {
             if (Input.GetKeyDown(KeyCode.Joystick1Button0))
             {
@@ -57,7 +58,7 @@ public class ControllerDetect : MonoBehaviour
             }
         }
 
-        if (controllerNames.Count > 1 && numOfPlayersReady < 2 && !string.IsNullOrEmpty(controllerNames[1]))
+        if (gc.controllerNames.Count > 1 && numOfPlayersReady < 2 && !string.IsNullOrEmpty(gc.controllerNames[1]))
         {
             if (Input.GetKeyDown(KeyCode.Joystick2Button0))
             {
@@ -79,6 +80,6 @@ public class ControllerDetect : MonoBehaviour
 
     void RemoveEmptyControllerNames()
     {
-        controllerNames.RemoveAll(name => string.IsNullOrEmpty(name));
+        gc.controllerNames.RemoveAll(name => string.IsNullOrEmpty(name));
     }
 }
