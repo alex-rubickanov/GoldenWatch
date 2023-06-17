@@ -1100,6 +1100,10 @@ PrefabInstance:
       propertyPath: countDown
       value: 
       objectReference: {fileID: 8300000, guid: bf0cb1f1c01ec524fb41dcba219df231, type: 3}
+    - target: {fileID: 1950559597402029750, guid: 17803e47a8b941749b8faee0a166dbc0, type: 3}
+      propertyPath: powerUpPickUp
+      value: 
+      objectReference: {fileID: 8300000, guid: 412fe65e2f89b41409d713efc2e17667, type: 3}
     - target: {fileID: 9031552787320577173, guid: 17803e47a8b941749b8faee0a166dbc0, type: 3}
       propertyPath: m_RootOrder
       value: 6

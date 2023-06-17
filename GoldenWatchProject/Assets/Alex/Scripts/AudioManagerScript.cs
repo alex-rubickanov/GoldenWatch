@@ -9,6 +9,7 @@ public class AudioManagerScript : MonoBehaviour
     [SerializeField] AudioClip[] songs;
     [SerializeField] AudioClip countDown;
     [SerializeField] AudioClip join;
+    [SerializeField] AudioClip powerUpPickUp;
 
     private static AudioManagerScript instance;
     private void Awake() //singleton
@@ -44,5 +45,10 @@ public class AudioManagerScript : MonoBehaviour
     public void JoinSfx()
     {
         audioSource.PlayOneShot(join);
+    }
+
+    public void PowerUpPickUp()
+    {
+        audioSource.PlayOneShot(powerUpPickUp);
     }
 }

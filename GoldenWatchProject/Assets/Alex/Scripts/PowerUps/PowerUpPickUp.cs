@@ -5,12 +5,18 @@ using UnityEngine;
 public class PowerUpPickUp : MonoBehaviour
 {
     [SerializeField] float healAmount;
+    private AudioManagerScript audioManager;
     enum TypeOfPowerUp 
     { 
         Heal,
         MovementSpeedX2,
         ShootingSpeedX2,
         RefreshAmmo
+    }
+
+    private void Awake()
+    {
+        audioManager = FindAnyObjectByType<AudioManagerScript>();
     }
 
     [SerializeField] TypeOfPowerUp powerUp;
@@ -44,6 +50,7 @@ public class PowerUpPickUp : MonoBehaviour
                     
                     break;
             }
+            audioManager.PowerUpPickUp();
             Destroy(gameObject);
         }
     }
