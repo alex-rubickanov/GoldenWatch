@@ -344,9 +344,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09ab2422bd8912e4692ad897973838a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxAmmo: 40
+  maxAmmo: 12
   currentAmmo: 0
-  damage: 10
+  damage: 20
   shootingSpeed: 1
   bulletPrefab: {fileID: 140902, guid: 35084be2685034545aaa733102047e05, type: 3}
   bulletSpeed: 40

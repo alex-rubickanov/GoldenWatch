@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerStatus : MonoBehaviour
 {
@@ -10,16 +11,23 @@ public class PlayerStatus : MonoBehaviour
     [SerializeField] private float health;
     private PlayerManager playerManager;
     private bool once = true;
+    [SerializeField] Slider healthSlider;
+    [SerializeField] GameObject attributes;
 
     private void Awake()
     {
         playerManager = GetComponentInParent<PlayerManager>();
-        ragdoll = gameObject.GetComponentInChildren<RagdollEnabler>();    
+        ragdoll = gameObject.GetComponentInChildren<RagdollEnabler>();
+        healthSlider.maxValue = health;
     }
 
     private void Update()
     {
+        if (health > 200) {
+            health = 200;
+        }
         CheckDeath();
+        healthSlider.value = health;
     }
     private void TakeDamage(float damage)
     {
@@ -38,6 +46,7 @@ public class PlayerStatus : MonoBehaviour
     private void CheckDeath()
     {
         if(health <= 0) {
+            attributes.SetActive(false);
             ragdoll.EnableRagdoll();
             gameObject.GetComponent<Movement>().enabled = false;
             gameObject.GetComponent<Rotation>().enabled = false;

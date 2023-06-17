@@ -2896,6 +2896,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentWeapon: {fileID: 0}
   weaponSlot: {fileID: 5965722210151181555}
+  ammoSlider: {fileID: 4203303923096929425}
 --- !u!114 &7042379827701772362
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2911,6 +2912,8 @@ MonoBehaviour:
   bloodVFX: {fileID: 2732227470374874161, guid: e0c0a3846d78fa342a58f7e8105d31c1, type: 3}
   spawnPoint: {fileID: 0}
   health: 200
+  healthSlider: {fileID: 6538880986778104159}
+  attributes: {fileID: 1991880270297731386}
 --- !u!114 &8409544751797248862
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3498,8 +3501,35 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 28a0546cbcd7d00498c1f221e54854eb, type: 3}
+--- !u!1 &1991880270297731386 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3792435787857415059, guid: 28a0546cbcd7d00498c1f221e54854eb, type: 3}
+  m_PrefabInstance: {fileID: 3388365863425727145}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &7785226561808480334 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4832162854009004775, guid: 28a0546cbcd7d00498c1f221e54854eb, type: 3}
   m_PrefabInstance: {fileID: 3388365863425727145}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6538880986778104159 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8483410950697397238, guid: 28a0546cbcd7d00498c1f221e54854eb, type: 3}
+  m_PrefabInstance: {fileID: 3388365863425727145}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4203303923096929425 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1535945627370659384, guid: 28a0546cbcd7d00498c1f221e54854eb, type: 3}
+  m_PrefabInstance: {fileID: 3388365863425727145}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
