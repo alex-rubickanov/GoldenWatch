@@ -6,11 +6,14 @@ public class PlayerStatus : MonoBehaviour
 {
     private RagdollEnabler ragdoll;
     [SerializeField] ParticleSystem bloodVFX;
-
+    [SerializeField] Transform spawnPoint;
     [SerializeField] private float health;
+    private PlayerManager playerManager;
+    private bool once = true;
 
     private void Awake()
     {
+        playerManager = GetComponentInParent<PlayerManager>();
         ragdoll = gameObject.GetComponentInChildren<RagdollEnabler>();    
     }
 
@@ -38,11 +41,21 @@ public class PlayerStatus : MonoBehaviour
             ragdoll.EnableRagdoll();
             gameObject.GetComponent<Movement>().enabled = false;
             gameObject.GetComponent<Rotation>().enabled = false;
+            if(once) {
+                playerManager.StartRespawn();
+                once = false;
+            }
+            
         }
     }
 
     public void Heal(float heal)
     {
         health += heal;
+    }
+
+    public float GetHealth()
+    {
+        return health;
     }
 }

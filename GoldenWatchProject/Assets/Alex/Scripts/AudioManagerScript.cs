@@ -11,6 +11,7 @@ public class AudioManagerScript : MonoBehaviour
 
     private void Start()
     {
+        DontDestroyOnLoad(this);
     }
     private void Update()
     {

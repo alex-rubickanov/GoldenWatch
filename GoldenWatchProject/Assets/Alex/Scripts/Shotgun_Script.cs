@@ -7,12 +7,10 @@ public class Shotgun_Script : Weapon
 {
     [SerializeField] private Transform[] bulletSpawners;
 
-    private void Start()
-    {
-        inputHandler = GameObject.FindAnyObjectByType<InputHandler>();
-    }
+    
     public override void Shoot()
     {
+        Debug.Log("Xuy");
         if(gameObject.GetComponentInParent<ShootingSpeedX2>() != null) {
             if (timer >= shootingSpeedX2 && currentAmmo > 0) {
                 timer = 0f;

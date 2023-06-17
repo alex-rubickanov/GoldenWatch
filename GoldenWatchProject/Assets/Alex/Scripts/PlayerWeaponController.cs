@@ -19,15 +19,15 @@ public class PlayerWeaponController : MonoBehaviour
 
     public void GiveWeapon(GameObject weaponObject)
     {
-        if(currentWeapon == null) {
-            if(currentWeaponObject != null) {
-                Destroy(currentWeaponObject);
-            }
-            currentWeaponObject = Instantiate(weaponObject, weaponSlot.transform);
-            currentWeapon = currentWeaponObject.GetComponent<Weapon>();
-            oldWeapon = currentWeapon;
-            
+        
+        if(currentWeaponObject != null) {
+            Destroy(currentWeaponObject);
         }
+        currentWeaponObject = Instantiate(weaponObject, weaponSlot.transform);
+        currentWeapon = currentWeaponObject.GetComponent<Weapon>();
+        oldWeapon = currentWeapon;
+            
+        
         
     }
     public bool HasWeapon()
@@ -50,5 +50,10 @@ public class PlayerWeaponController : MonoBehaviour
     public Weapon GetCurrentWeapon()
     {
         return currentWeapon;
+    }
+
+    public Weapon GetOldWeapon()
+    {
+        return oldWeapon;
     }
 }

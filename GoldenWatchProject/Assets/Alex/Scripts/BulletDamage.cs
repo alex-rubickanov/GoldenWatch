@@ -15,4 +15,11 @@ public class BulletDamage : MonoBehaviour
     {
         this.damage = damage;
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.GetComponent<Movement>() == null && other.gameObject.tag != "Bullet" && other.gameObject.tag != "PickUp") {
+            Destroy(gameObject);
+        }
+    }
 }

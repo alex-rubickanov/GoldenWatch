@@ -10,7 +10,10 @@ public class PickUpPoint : MonoBehaviour
     {
         PlayerWeaponController playerWeaponController = other.GetComponent<PlayerWeaponController>();
         if (playerWeaponController != null) {
-            playerWeaponController.GiveWeapon(weapon);
+            if(playerWeaponController.GetCurrentWeapon() == null) {
+                playerWeaponController.GiveWeapon(weapon);
+                Destroy(gameObject);
+            }
         }
     }
 }

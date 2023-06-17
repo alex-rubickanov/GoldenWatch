@@ -34,11 +34,17 @@ public class PowerUpPickUp : MonoBehaviour
                     break;
                 case TypeOfPowerUp.RefreshAmmo:
                     if(other.gameObject.GetComponent<PlayerWeaponController>().GetCurrentWeapon() == null) {
-                        other.gameObject.GetComponent<PlayerWeaponController>().RefreshOldWeapon();
+                        if(other.gameObject.GetComponent<PlayerWeaponController>().GetOldWeapon() != null) {
+                            other.gameObject.GetComponent<PlayerWeaponController>().RefreshOldWeapon();
+                        }
                     }
-                    other.gameObject.GetComponentInChildren<Weapon>().RefreshAmmo();
+                    if(other.gameObject.GetComponent<PlayerWeaponController>().GetCurrentWeapon() != null) {
+                        other.gameObject.GetComponentInChildren<Weapon>().RefreshAmmo();
+                    }
+                    
                     break;
             }
+            Destroy(gameObject);
         }
     }
 }
