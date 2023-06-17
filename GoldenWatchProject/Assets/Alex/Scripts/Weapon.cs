@@ -94,4 +94,14 @@ public class Weapon : MonoBehaviour
     {
         currentAmmo = maxAmmo;
     }
+
+    public int GetCurrentAmmo()
+    {
+        return currentAmmo;
+    }
+
+    public int GetMaxAmmo()
+    {
+        return maxAmmo;
+    }
 }

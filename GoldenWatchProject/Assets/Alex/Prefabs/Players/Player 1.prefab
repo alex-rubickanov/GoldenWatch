@@ -2667,6 +2667,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentWeapon: {fileID: 0}
   weaponSlot: {fileID: 6996972521047144978}
+  ammoSlider: {fileID: 787469961980447541}
 --- !u!114 &5938896564068902571
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2682,6 +2683,8 @@ MonoBehaviour:
   bloodVFX: {fileID: 2732227470374874161, guid: e0c0a3846d78fa342a58f7e8105d31c1, type: 3}
   spawnPoint: {fileID: 0}
   health: 200
+  healthSlider: {fileID: 7639865265020649211}
+  attributes: {fileID: 3106377542150708894}
 --- !u!114 &7760077441066865257
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerWeaponController : MonoBehaviour
 {
@@ -8,13 +9,16 @@ public class PlayerWeaponController : MonoBehaviour
     private Weapon oldWeapon;
     GameObject currentWeaponObject;
     [SerializeField] private GameObject weaponSlot;
+    [SerializeField] private Slider ammoSlider;
 
     private void Update()
     {
-        if(currentWeapon != null) {
+        ammoSlider.maxValue = currentWeapon.GetMaxAmmo();
+        ammoSlider.value = currentWeapon.GetCurrentAmmo();
+
+        if (currentWeapon != null) {
             CheckAmmoAndDestroy();
         }
-        
     }
 
     public void GiveWeapon(GameObject weaponObject)
@@ -26,7 +30,7 @@ public class PlayerWeaponController : MonoBehaviour
         currentWeaponObject = Instantiate(weaponObject, weaponSlot.transform);
         currentWeapon = currentWeaponObject.GetComponent<Weapon>();
         oldWeapon = currentWeapon;
-            
+         
         
         
     }
