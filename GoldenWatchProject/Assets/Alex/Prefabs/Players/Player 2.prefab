@@ -1660,7 +1660,7 @@ MonoBehaviour:
       m_Length: 1
       m_Item0:
         transform: {fileID: 5965722211048951824}
-        weight: 0.27
+        weight: 0.23
       m_Item1:
         transform: {fileID: 0}
         weight: 0
