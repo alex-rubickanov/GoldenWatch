@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameOver : MonoBehaviour
@@ -10,9 +11,10 @@ public class GameOver : MonoBehaviour
     [SerializeField] Image player2Timer;
     [SerializeField] Sprite[] playerWinUI;
     [SerializeField] GameObject gameOverUi;
+    [SerializeField] Button exitBtn;
     void Start()
     {
-        
+        exitBtn.onClick.AddListener(ExitToMain);
     }
 
     // Update is called once per frame
@@ -39,6 +41,9 @@ public class GameOver : MonoBehaviour
         Time.timeScale = 0f;
     }
 
-
+    void ExitToMain()
+    {
+        SceneManager.LoadScene("Title");
+    }
     
 }
