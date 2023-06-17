@@ -21,7 +21,6 @@ public class AudioManagerScript : MonoBehaviour
     private void PlayMusic()
     {
         audioSource.PlayOneShot(songs[Random.Range(0, songs.Length)]);
-        audioSource.
     }
 
 }

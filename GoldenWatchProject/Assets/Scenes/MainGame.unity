@@ -16483,8 +16483,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1002937234}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -14.26, y: 2.87, z: -13.6}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -15.37, y: 2.87, z: -13.33}
+  m_LocalScale: {x: 0.90795004, y: 0.90795004, z: 0.90795004}
   m_Children:
   - {fileID: 1236095079}
   - {fileID: 82490181}
@@ -16525,11 +16525,12 @@ MonoBehaviour:
   - {fileID: 2137276306}
   - {fileID: 1271423540}
   powerUps:
-  - {fileID: 1860184351635337177, guid: 43d1af031c32a4d47a9b38cb1eec248b, type: 3}
-  - {fileID: 2511602919402480146, guid: cd4459c04c9a89146a52f33bc47dfcc4, type: 3}
-  - {fileID: 2865950760069950590, guid: 86cbf1e14e522064bbd946f3fd059701, type: 3}
-  minSpawnTime: 5
-  maxSpawnTime: 10
+  - {fileID: 4178903426623621828, guid: 3a10df46ac303574395e9c225ff3bb03, type: 3}
+  - {fileID: 7891972604938705365, guid: 9d9c8c78606a0534b89a03c1f3c7c254, type: 3}
+  - {fileID: 8591587481295033188, guid: 8b49d56fdcc30a847be3bcd4374694fe, type: 3}
+  - {fileID: 3998997304926867699, guid: 9d7cdca2081a2944ab2424409f321e4f, type: 3}
+  minSpawnTime: 3
+  maxSpawnTime: 6
 --- !u!1001 &1003569849
 PrefabInstance:
   m_ObjectHideFlags: 0
