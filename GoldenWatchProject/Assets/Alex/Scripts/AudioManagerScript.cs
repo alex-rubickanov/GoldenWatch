@@ -4,14 +4,17 @@ using UnityEngine;
 
 public class AudioManagerScript : MonoBehaviour
 {
-    AudioSource audioSource;
-    AudioSource musicSource;
+    [SerializeField]AudioSource audioSource;
+    [SerializeField] AudioSource musicSource;
     [SerializeField] AudioClip[] songs;
 
 
     private void Start()
     {
-        audioSource = GetComponent<AudioSource>();
+    }
+    private void Update()
+    {
+        PlayMusic();
     }
     public void PlayGunSound(Weapon weapon, float volume)
     {
@@ -20,8 +23,9 @@ public class AudioManagerScript : MonoBehaviour
 
     private void PlayMusic()
     {
-        audioSource.PlayOneShot(songs[Random.Range(0, songs.Length)]);
-        audioSource.
+        if (!musicSource.isPlaying) {
+            musicSource.PlayOneShot(songs[Random.Range(0, songs.Length)], 0.1f);
+        }
     }
 
 }
