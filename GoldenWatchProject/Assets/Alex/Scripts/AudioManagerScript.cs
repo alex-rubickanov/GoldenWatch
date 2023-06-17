@@ -7,6 +7,8 @@ public class AudioManagerScript : MonoBehaviour
     [SerializeField]AudioSource audioSource;
     [SerializeField] AudioSource musicSource;
     [SerializeField] AudioClip[] songs;
+    [SerializeField] AudioClip countDown;
+    [SerializeField] AudioClip join;
 
     private static AudioManagerScript instance;
     private void Awake() //singleton
@@ -34,4 +36,13 @@ public class AudioManagerScript : MonoBehaviour
         }
     }
 
+    public void PlayCountDown()
+    {
+        audioSource.PlayOneShot(countDown);
+    }
+
+    public void JoinSfx()
+    {
+        audioSource.PlayOneShot(join);
+    }
 }

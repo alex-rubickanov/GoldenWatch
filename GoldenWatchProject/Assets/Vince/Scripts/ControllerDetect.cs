@@ -10,7 +10,13 @@ public class ControllerDetect : MonoBehaviour
     [SerializeField] GameObject[] playerReady;
     [SerializeField] GameObject[] joinBtns;
     [SerializeField] GameObject startText;
+    AudioManagerScript audioManager;
     public int numOfPlayersReady;
+
+    private void OnEnable()
+    {
+        audioManager = FindObjectOfType<AudioManagerScript>();
+    }
 
     void Update()
     {
@@ -31,6 +37,7 @@ public class ControllerDetect : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Joystick1Button7) || Input.GetKeyDown(KeyCode.Joystick2Button7))
             {
                 SceneManager.LoadScene("MainGame");
+                audioManager.JoinSfx();
             }
             // Load scene or start the game
 
@@ -46,6 +53,7 @@ public class ControllerDetect : MonoBehaviour
                 SetNumberOfPlayerReady(0);
                 playerReady[0].SetActive(true);
                 joinBtns[0].SetActive(false);
+                audioManager.JoinSfx();
             }
         }
 
@@ -56,6 +64,7 @@ public class ControllerDetect : MonoBehaviour
                 SetNumberOfPlayerReady(1);
                 playerReady[1].SetActive(true);
                 joinBtns[1].SetActive(false);
+                audioManager.JoinSfx();
             }
         }
     }

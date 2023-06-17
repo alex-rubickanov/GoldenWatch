@@ -8,8 +8,11 @@ public class CountDownStarter : MonoBehaviour
     [SerializeField] GameObject[] playerUis;
     [SerializeField] GameObject[] playerMangers;
     [SerializeField] GameObject countdown;
+    [SerializeField] AudioManagerScript audioManager;
     void Start()
     {
+        audioManager = FindAnyObjectByType<AudioManagerScript>();
+        audioManager.PlayCountDown();
         EnableAllObjects(false);
     }
 
