@@ -13,7 +13,6 @@ public class ControllerDetect : MonoBehaviour
     AudioManagerScript audioManager;
     public int numOfPlayersReady;
     [SerializeField] GetControllers gc;
-
     private void OnEnable()
     {
         audioManager = FindObjectOfType<AudioManagerScript>();
@@ -57,9 +56,9 @@ public class ControllerDetect : MonoBehaviour
             }
         }
 
-        if (gc.controllerNames.Count > 1 && numOfPlayersReady < 2 && !string.IsNullOrEmpty(gc.controllerNames[1]))
+        if (/*gc.controllerNames.Count > 1 && numOfPlayersReady < 2 && !string.IsNullOrEmpty(gc.controllerNames[1]*/true)
         {
-            if (Input.GetKeyDown(KeyCode.Joystick2Button0))
+            if (Input.GetKeyDown(KeyCode.Joystick2Button0) || Input.GetKeyDown(KeyCode.Return))
             {
                 SetNumberOfPlayerReady(1);
                 playerReady[1].SetActive(true);

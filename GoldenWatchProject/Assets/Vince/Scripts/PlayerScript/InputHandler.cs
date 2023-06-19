@@ -11,8 +11,9 @@ public class InputHandler : MonoBehaviour
 
     string playerRole;
     public enum PlayerRole{
-        Player1,
-        Player2
+        Player1 = 0,
+        Player2 = 1,
+        Player_KB = 2
     }
 
     private void Start()
@@ -30,6 +31,10 @@ public class InputHandler : MonoBehaviour
         {
             playerRole = "P2_";
         }
+        else if (playerNum == PlayerRole.Player_KB) 
+        {
+            playerRole = "P1_KB_";
+        }
     }
 
     public string GetPlayerRole
@@ -38,5 +43,10 @@ public class InputHandler : MonoBehaviour
         {
             return playerRole;
         }
+    }
+
+    public PlayerRole GetPlayerNum()
+    {
+        return playerNum;
     }
 }
