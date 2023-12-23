@@ -23,32 +23,54 @@ public class Movement : MonoBehaviour
         movementSpeedX2 = movementSpeed * 2;
     }
 
-    void Update()
+    void FixedUpdate()
     {
-        Move();
+        if(inputHandler.GetPlayerNum() == InputHandler.PlayerRole.Player_KB) {
+            MoveKB();
+        } else {
+            Move();
+        }
     }
 
     private void Move()
     {
-        //float xMovement = Input.GetAxis($"{inputHandler.GetPlayerRole}LS_Horizontal");
-        //float yMovement = Input.GetAxis($"{inputHandler.GetPlayerRole}LS_Vertical");
-
         float xMovement = Input.GetAxis(inputHandler.GetPlayerRole + "LS_Horizontal");
         float yMovement = Input.GetAxis(inputHandler.GetPlayerRole + "LS_Vertical");
 
-        if(gameObject.GetComponent<MovementSpeedX2>() != null) {
+        if (gameObject.GetComponent<MovementSpeedX2>() != null) {
             movement = new Vector3(xMovement, 0, yMovement) * movementSpeedX2;
         } else {
             movement = new Vector3(xMovement, 0, yMovement) * movementSpeed;
         }
-        
+
         rb.velocity = movement;
+    }
+
+    private void MoveKB()
+    {
+        float xMovement = Input.GetAxis(inputHandler.GetPlayerRole + "LS_Horizontal");
+        float yMovement = Input.GetAxis(inputHandler.GetPlayerRole + "LS_Vertical");
+
+        
+        movement = new Vector3(xMovement, 0, yMovement);
+        
+        if (gameObject.GetComponent<MovementSpeedX2>() != null) {
+            rb.velocity = movement.normalized * movementSpeedX2;
+        } else {
+            rb.velocity = movement.normalized * movementSpeed;
+        }
+        
     }
 
 
     public Vector3 GetLeftJoystickInput()
     {   
-        return movement;
+        if(inputHandler.GetPlayerNum() == InputHandler.PlayerRole.Player_KB) {
+            return rb.velocity;
+        }else {
+            return movement;
+        }
+        
     }
 
 }

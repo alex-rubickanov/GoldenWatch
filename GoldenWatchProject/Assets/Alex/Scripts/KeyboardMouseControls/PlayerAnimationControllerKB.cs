@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerAnimationController : MonoBehaviour
+public class PlayerAnimationControllerKB : MonoBehaviour
 {
     private Animator animator;
-    private Movement movementScript;
+    private MovementKB movementScript;
 
     private const string VELOCITY_X = "VelX";
     private const string VELOCITY_Z = "VelZ";
@@ -18,14 +18,14 @@ public class PlayerAnimationController : MonoBehaviour
     private void Start()
     {
         animator = GetComponent<Animator>();
-        movementScript = GetComponentInParent<Movement>();
+        movementScript = GetComponentInParent<MovementKB>();
         playerWeaponController = GetComponentInParent<PlayerWeaponController>();
     }
 
     private void Update()
     {
         Animating(movementScript.GetLeftJoystickInput().x, movementScript.GetLeftJoystickInput().z);
-        if(playerWeaponController.HasWeapon()) {
+        if (playerWeaponController.HasWeapon()) {
             animator.SetBool(HAS_WEAPON, true);
         } else {
             animator.SetBool(HAS_WEAPON, false);
@@ -34,7 +34,7 @@ public class PlayerAnimationController : MonoBehaviour
 
     void Animating(float h, float v)
     {
-        moveDirection = new Vector3(h, 0, v);
+        moveDirection = new Vector3(h*5, 0, v*5);
 
         //if (moveDirection.magnitude > 1.0f) {
         //    moveDirection = moveDirection.normalized;

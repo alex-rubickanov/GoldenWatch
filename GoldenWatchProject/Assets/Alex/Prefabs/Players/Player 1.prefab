@@ -1437,7 +1437,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6996972521044820745}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.3, z: 4.32}
+  m_LocalPosition: {x: 0.35, y: 1.3, z: 4.32}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6996972522229729009}
@@ -2550,8 +2550,8 @@ GameObject:
   - component: {fileID: 6996972521462482628}
   - component: {fileID: 6996972521462482651}
   - component: {fileID: 6996972521462482650}
-  - component: {fileID: 6996972521462482649}
   - component: {fileID: 6996972521462482648}
+  - component: {fileID: 6996972521462482649}
   - component: {fileID: 6996972521462482655}
   - component: {fileID: 5938896564068902571}
   - component: {fileID: 7760077441066865257}
@@ -2605,7 +2605,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 5
-  playerBody: {fileID: 0}
+  playerBody: {fileID: 6996972521151274570}
 --- !u!114 &6996972521462482650
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2622,7 +2622,23 @@ MonoBehaviour:
   anchor: {fileID: 6996972522229729009}
   targetSight: {fileID: 6996972521044820746}
   playerBody: {fileID: 6996972521151274570}
-  rot: 0
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+--- !u!136 &6996972521462482648
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6996972521462482654}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.40768743
+  m_Height: 1.8261611
+  m_Direction: 1
+  m_Center: {x: -0.017695129, y: 0.8794204, z: 0.0076874495}
 --- !u!54 &6996972521462482649
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2639,20 +2655,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 116
   m_CollisionDetection: 0
---- !u!136 &6996972521462482648
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6996972521462482654}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.40768743
-  m_Height: 1.8261611
-  m_Direction: 1
-  m_Center: {x: -0.017695129, y: 0.8794204, z: 0.0076874495}
 --- !u!114 &6996972521462482655
 MonoBehaviour:
   m_ObjectHideFlags: 0

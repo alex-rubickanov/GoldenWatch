@@ -9,11 +9,12 @@ TagManager:
   - GoldWatch
   - Player1Timer
   - Player2Timer
+  - AimCamera
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Ground
   - Water
   - UI
   - 

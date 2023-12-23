@@ -13,8 +13,11 @@ public class PlayerWeaponController : MonoBehaviour
 
     private void Update()
     {
-        ammoSlider.maxValue = currentWeapon.GetMaxAmmo();
-        ammoSlider.value = currentWeapon.GetCurrentAmmo();
+        if(currentWeapon != null) {
+            ammoSlider.maxValue = currentWeapon.GetMaxAmmo();
+            ammoSlider.value = currentWeapon.GetCurrentAmmo();
+        }
+        
 
         if (currentWeapon != null) {
             CheckAmmoAndDestroy();

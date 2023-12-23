@@ -39,7 +39,7 @@ public class Weapon : MonoBehaviour
     private void Update()
     {
         timer += Time.deltaTime;
-
+        
         if (Input.GetAxis($"{inputHandler.GetPlayerRole}Fire") > 0)
         {
             Shoot();
