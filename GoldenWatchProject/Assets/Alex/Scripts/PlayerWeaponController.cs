@@ -13,30 +13,36 @@ public class PlayerWeaponController : MonoBehaviour
 
     private void Update()
     {
-        if(currentWeapon != null) {
+        if (currentWeapon != null)
+        {
+            ammoSlider.gameObject.SetActive(true);
             ammoSlider.maxValue = currentWeapon.GetMaxAmmo();
             ammoSlider.value = currentWeapon.GetCurrentAmmo();
         }
-        
+        else
+        {
+            ammoSlider.gameObject.SetActive(false);
+        }
 
-        if (currentWeapon != null) {
+
+        if (currentWeapon != null)
+        {
             CheckAmmoAndDestroy();
         }
     }
 
     public void GiveWeapon(GameObject weaponObject)
     {
-        
-        if(currentWeaponObject != null) {
+        if (currentWeaponObject != null)
+        {
             Destroy(currentWeaponObject);
         }
+
         currentWeaponObject = Instantiate(weaponObject, weaponSlot.transform);
         currentWeapon = currentWeaponObject.GetComponent<Weapon>();
         oldWeapon = currentWeapon;
-         
-        
-        
     }
+
     public bool HasWeapon()
     {
         return currentWeapon != null;
@@ -44,7 +50,8 @@ public class PlayerWeaponController : MonoBehaviour
 
     private void CheckAmmoAndDestroy()
     {
-        if (!currentWeapon.HasAmmo()) {
+        if (!currentWeapon.HasAmmo())
+        {
             currentWeapon = null;
         }
     }
