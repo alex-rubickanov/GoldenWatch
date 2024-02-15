@@ -9,7 +9,9 @@ public class WatchHandler : MonoBehaviour
     [SerializeField] PlayerRole playerRole;
     [SerializeField] bool goldWatch;
     [SerializeField] GameObject goldWatchObj;
+    [SerializeField] GameObject goldArrow;
     PlayerStatus playerStatus;
+    static bool arrowDisabled;
     bool goldSpawned;
 
     enum PlayerRole
@@ -41,18 +43,19 @@ public class WatchHandler : MonoBehaviour
     {
         if (goldWatch)
         {
+            goldArrow.SetActive(true);
             SwitchTimerColor(Color.white);
             uiTimer.GetComponent<Timer>().StartTimer = false;
         }
         else if (playerStatus.GetHealth() <= 0)
         {
-
+            goldArrow.SetActive(false);
             SwitchTimerColor(Color.red);
             uiTimer.GetComponent<Timer>().StartTimer = true;
         }
         else
         {
-            
+            goldArrow.SetActive(false);
             SwitchTimerColor(Color.red);
             uiTimer.GetComponent<Timer>().StartTimer = true;
         }
@@ -76,6 +79,16 @@ public class WatchHandler : MonoBehaviour
         if (collision.gameObject.tag == "GoldWatch")
         {
             goldWatch = true;
+            if (!arrowDisabled)
+            {
+                arrowDisabled = true;
+                GameObject goldwatchArrow = collision.gameObject.transform.Find("Arrow").gameObject;
+                if (goldwatchArrow != null)
+                {
+                    goldwatchArrow.SetActive(false);
+                }
+            }
+
             Destroy(collision.gameObject.gameObject);
         }
     }
