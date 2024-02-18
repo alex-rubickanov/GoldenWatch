@@ -1,2 +1,2 @@
 # GoldenWatch
-Game for Dubai gamejam 
+Game made during Zempai Gamejam in Dubai 2023 Winter. 
